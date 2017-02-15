@@ -14,6 +14,7 @@
 
   NoteList.prototype.addNote = function (text) {
     var note = new Note(text);
+    note.id = this._notes.length
     return this._notes.push(note);
   }
 
