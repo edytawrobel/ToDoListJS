@@ -1,7 +1,6 @@
 (function(exports){
 
    function NoteController(noteListModel){
-    noteListModel.addNote('Favourite drink: seltzer');
     this.noteListView = new NoteView(noteListModel);
   };
 
