@@ -1,11 +1,13 @@
 (function(exports){
 
-   function NoteController(){
+   function NoteController(noteListModel){
+    noteListModel.addNote('Favourite drink: seltzer');
+    this.noteListView = new NoteView(noteListModel);
   };
 
   NoteController.prototype.htmlInserter = function(){
-    var el = document.getElementById('app');
-    el.innerHTML = "howdy";
+    this.el = document.getElementById('app');
+    this.el.innerHTML = this.noteListView.displayNotes();
 
   };
 
