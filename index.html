@@ -1,37 +1,64 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Notes</title>
+    <link href='http://assets.makersacademy.com/images/favicons/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+    <link rel="stylesheet" type="text/css"
+    href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
 
-<html>
-<head>
-  <title>Notes</title>
-  <link href='http://assets.makersacademy.com/images/favicons/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-  <link rel="stylesheet" type="text/css"
-  href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="main.css">
-</head>
+  <body>
+    <div id="main">
+      <h1>Notes</h1>
+    </div>
+    <div id="app">"Hello"</div>
+    <div id="singlenote"></div>
 
-<body>
-  <div id="main">
-    <h1>Notes</h1>
-  </div>
-  <div id="app">"Hello"</div>
-  <div id="singlenote"></div>
+    <script>
+      makeUrlChangeShowNoteForCurrentPage();
 
+      function makeUrlChangeShowNoteForCurrentPage() {
+        window.addEventListener("hashchange", showNoteForCurrentPage);
+      };
 
-  <script src="src/note-list-view.js"></script>
-  <script src="src/note-model.js"></script>
-  <script src="src/note-list-model.js"></script>
-  <script src="src/note-controller.js"></script>
-  <script src="src/index.js"></script>
-  <script src="src/single-note-view.js"></script>
+      function showNoteForCurrentPage() {
+        showNote(getNoteIdFromUrl(window.location));
+      };
 
+      function getNoteIdFromUrl(location) {
+        return parseInt(location.hash.split("#notes/")[1]);
+      };
 
-  <script src="spec/assert.js"></script>
-  <script src="spec/note-model-test.js"></script>
-  <script src="spec/note-list-model-test.js"></script>
-  <script src="spec/note-list-view-test.js"></script>
-  <script src="spec/note-controller-test.js"></script>
-  <script src="spec/single-note-view-test.js"></script>
+      function showNote(noteId) {
+        var list = new NoteList()
+        list.getNoteList[noteId];
 
-</body>
+        var something = document.getElementById("singlenote");
+        console.log(something)
+        something.innerHTML = 'somestin'
+
+        // document
+        //   .getElementById("singlenote")
+          // .innerHTML = note.getText();
+      };
+
+    </script>
+
+    <script src="src/note-list-view.js"></script>
+    <script src="src/note-model.js"></script>
+    <script src="src/note-list-model.js"></script>
+    <script src="src/note-controller.js"></script>
+    <script src="src/index.js"></script>
+    <script src="src/single-note-view.js"></script>
+
+    <script src="spec/assert.js"></script>
+    <script src="spec/note-model-test.js"></script>
+    <script src="spec/note-list-model-test.js"></script>
+    <script src="spec/note-list-view-test.js"></script>
+    <script src="spec/note-controller-test.js"></script>
+    <script src="spec/single-note-view-test.js"></script>
+
+  </body>
 </html>
