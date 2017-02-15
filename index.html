@@ -10,41 +10,9 @@
   </head>
 
   <body>
-    <div id="main">
-      <h1>Notes</h1>
-    </div>
-    <div id="app">"Hello"</div>
+    <div id="main"><h1>Notes</h1></div>
+    <div id="app"></div>
     <div id="singlenote"></div>
-
-    <script>
-      makeUrlChangeShowNoteForCurrentPage();
-
-      function makeUrlChangeShowNoteForCurrentPage() {
-        window.addEventListener("hashchange", showNoteForCurrentPage);
-      };
-
-      function showNoteForCurrentPage() {
-        showNote(getNoteIdFromUrl(window.location));
-      };
-
-      function getNoteIdFromUrl(location) {
-        return parseInt(location.hash.split("#notes/")[1]);
-      };
-
-      function showNote(noteId) {
-        var list = new NoteList()
-        list.getNoteList[noteId];
-
-        var something = document.getElementById("singlenote");
-        console.log(something)
-        something.innerHTML = 'somestin'
-
-        // document
-        //   .getElementById("singlenote")
-          // .innerHTML = note.getText();
-      };
-
-    </script>
 
     <script src="src/note-list-view.js"></script>
     <script src="src/note-model.js"></script>
@@ -59,6 +27,5 @@
     <script src="spec/note-list-view-test.js"></script>
     <script src="spec/note-controller-test.js"></script>
     <script src="spec/single-note-view-test.js"></script>
-
   </body>
 </html>

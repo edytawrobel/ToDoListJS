@@ -4,7 +4,6 @@ function testNoteViewtMakesInstanceOfNoteView() {
   assert.isTrue(noteview instanceof NoteView);
 }
 
-
 function testNoteViewReturnFormattedList() {
   var notelist = new NoteList();
   notelist.addNote("note1");
