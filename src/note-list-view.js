@@ -2,7 +2,7 @@
 
 (function(exports) {
 
-  var notelist = [];
+  // var notelist = [];
 
   function NoteView(notelistObj) {
     this._notelist = notelistObj.getNoteList();
