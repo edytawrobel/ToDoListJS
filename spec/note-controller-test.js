@@ -14,7 +14,7 @@ function testInnerHTML() {
     return {};
   };
   controller.htmlInserter();
-  assert.isTrue(controller.el.innerHTML === '<ul><li><div>Favourite food: pesto</div></li></ul>');
+  assert.isTrue(controller.el.innerHTML === '<ul><li><div>Favourite food: pest</div></li></ul>');
 }
 
 testInnerHTML();
