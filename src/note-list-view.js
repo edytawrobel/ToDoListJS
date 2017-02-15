@@ -8,7 +8,7 @@
   NoteView.prototype.displayNotes = function () {
     var string = "";
       for (var i = 0; i < this._notelist.length; i++) {
-      string += "<li><div>" + this._notelist[i].getText().slice(0,20) + "</div></li>";
+      string += "<li><div><a href=\"#notes/" + i + "\">" + this._notelist[i].getText().slice(0,20) + "</a></div></li>";
     }
     return "<ul>" + string + "</ul>";
   };
