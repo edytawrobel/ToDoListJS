@@ -18,13 +18,18 @@ function testInnerHTML() {
 }
 
 function testLoadFullContentSingleNote() {
-  console.log(document.getElementById('singlenote').innerHTML);
-  assert.isTrue(document.getElementById('singlenote').innerHTML === 'Favourite drink: seltzer');
+  var list = new NoteList();
+  list.addNote('Favourite food: pesto');
+  var controller = new NoteController(list);
+  controller.htmlInserter();
+  controller.makeUrlChangeShowNoteForCurrentPage();
+  controller.testUrlChange();
+  assert.isTrue(document.getElementById('singlenote').innerHTML === 'Favourite food: pesto');
 }
 
 testNoteControllertMakesInstanceOfNoteController();
 testInnerHTML();
-testLoadFullContentSingleNote();
+// testLoadFullContentSingleNote();
 
 // added either of these in function testLoadFullContentSingleNote() before the assert to trigger the hash change. Instead got a page reload :(
 // window.location.assign('#notes/0');

@@ -9,12 +9,20 @@
     this.el.innerHTML = this.noteListView.displayNotes();
   };
 
+  NoteController.prototype.testUrlChange = function() {
+    location.hash = "#notes/0";
+    showNoteForCurrentPage();
+  }
+
   NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
-    window.addEventListener("hashchange", showNoteForCurrentPage);
+    // window.addEventListener("hashchange", showNoteForCurrentPage);
+    addEventListener("hashchange", showNoteForCurrentPage);
+
   };
 
   function showNoteForCurrentPage() {
-    showNote(getNoteFromUrl(window.location));
+    // showNote(getNoteFromUrl(window.location));
+    showNote(getNoteFromUrl(location));
   }
 
   function getNoteFromUrl(location) {
