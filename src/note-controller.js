@@ -22,10 +22,10 @@
 
   function showNoteForCurrentPage() {
     // showNote(getNoteFromUrl(window.location));
-    showNote(getNoteFromUrl(location));
+    showNote(getNoteFromUrl(location.hash));
   }
 
-  function getNoteFromUrl(location) {
+  function getNoteFromUrl(locationHash) {
     return parseInt(location.hash.split("#notes/")[1]);
   }
 

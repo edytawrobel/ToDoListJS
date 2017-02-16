@@ -8,7 +8,6 @@
   padding: 10px;
 }
 
-
 #singlenote {
   margin-left: 40px;
 }
@@ -16,4 +15,9 @@
 li {
   border-radius: 3px;
   list-style: none;
+}
+
+textarea {
+  margin-top: 20px;
+ color: grey;
 }

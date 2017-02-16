@@ -10,5 +10,7 @@ function testSingleNoteReturnsHTML() {
   assert.isTrue(singlenote.displayNote() === '<div>text</div>');
 }
 
+
+
 testSingleNoteViewInstanceOfSingleNoteView();
 testSingleNoteReturnsHTML();
