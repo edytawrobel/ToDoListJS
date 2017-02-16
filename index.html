@@ -15,9 +15,11 @@
       <div id="app"></div>
       <div id="singlenote"></div>
       <form id="text" action="notes/new" method="post">
-        <textarea>New Note</textarea><br />
-        <input name="submit" type="submit" value="Submit" />
+        <textarea id="new-note">New Note</textarea><br />
+        <input id="submit" name="submit" type="submit" value="Submit" />
       </form>
+      <p id="output"></p>
+
     </div>
 
     <script src="src/note-list-view.js"></script>
@@ -33,5 +35,7 @@
     <script src="spec/note-list-view-test.js"></script>
     <script src="spec/note-controller-test.js"></script>
     <script src="spec/single-note-view-test.js"></script>
+    <script>
+    </script>
   </body>
 </html>
