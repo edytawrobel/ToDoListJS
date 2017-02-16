@@ -12,7 +12,7 @@ function testInnerHTML() {
   document.getElementById = function() {
     return {};
   };
-  controller.htmlInserter();
+  controller.htmlInsert();
   assert.isTrue(controller.el.innerHTML === '<ul><li><div><a href=\"#notes/0\">Favourite food: pest</a></div></li></ul>');
   document.getElementById = gbie;
 }
@@ -21,7 +21,7 @@ function testSingleNoteDisplay() {
   var noteList = new NoteList();
   noteList.addNote('Favourite food: pesto');
   var controller = new NoteController(list);
-  controller.htmlInserter();
+  controller.htmlInsert();
   // controller.makeUrlChangeShowNoteForCurrentPage();
   controller.testUrlChange();
   assert.isTrue(document.getElementById('singlenote').innerHTML === 'Favourite food: pesto');

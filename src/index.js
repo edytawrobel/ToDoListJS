@@ -1,16 +1,14 @@
-var list = new NoteList();
-list.addNote('Favourite drink: seltzer');
-var controller = new NoteController(list);
-var view = new NoteView(list);
-controller.htmlInserter();
-controller.makeUrlChangeShowNoteForCurrentPage();
-
+var noteList = new NoteList();
+// list.addNote('Favourite drink: seltzer');
+var noteController = new NoteController(noteList);
+var noteView = new NoteView(noteList);
+// noteController.makeUrlChangeShowNoteForCurrentPage();
 
 
 document.addEventListener('submit', function (e) {
-
     e.preventDefault();
-
-    console.log(document.getElementById('new-note').value);
-
+    // console.log(document.getElementById('new-note').value);
+    noteList.addNote(document.getElementById('new-note').value);
+    noteController.htmlInsert();
+    noteController.makeUrlChangeShowNoteForCurrentPage();
 });

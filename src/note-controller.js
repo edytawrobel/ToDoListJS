@@ -1,27 +1,19 @@
 (function(exports){
-  function NoteController(noteListModel){
-    this.noteListView = new NoteView(noteListModel);
-    this.notelist = noteListModel;
+  function NoteController(noteList){
+    this.noteListView = new NoteView(noteList);
+    this.noteList = noteList;
   }
 
-  NoteController.prototype.htmlInserter = function(){
+  NoteController.prototype.htmlInsert = function(){
     this.el = document.getElementById('app');
     this.el.innerHTML = this.noteListView.displayNotes();
   };
 
-  NoteController.prototype.testUrlChange = function() {
-    location.hash = "#notes/0";
-    showNoteForCurrentPage();
-  }
-
   NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
-    // window.addEventListener("hashchange", showNoteForCurrentPage);
-    addEventListener("hashchange", showNoteForCurrentPage);
-
+    window.addEventListener("hashchange", showNoteForCurrentPage);
   };
 
   function showNoteForCurrentPage() {
-    // showNote(getNoteFromUrl(window.location));
     showNote(getNoteFromUrl(location.hash));
   }
 
@@ -30,7 +22,7 @@
   }
 
   function showNote(noteId) {
-    document.getElementById("singlenote").innerHTML = list.getNoteList()[noteId].getText();
+    document.getElementById("singlenote").innerHTML = noteList.getNoteList()[noteId].getText();
   }
 
   exports.NoteController = NoteController;
