@@ -1,29 +1,29 @@
-(function(exports){
-  function NoteController(noteList){
-    this.noteListView = new NoteView(noteList);
-    this.noteList = noteList;
+(function (exports) {
+  function NoteController (noteList) {
+    this.noteListView = new NoteView(noteList)
+    this.noteList = noteList
   }
 
-  NoteController.prototype.htmlInsert = function(){
-    this.el = document.getElementById('app');
-    this.el.innerHTML = this.noteListView.displayNotes();
-  };
-
-  NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
-    window.addEventListener("hashchange", showNoteForCurrentPage);
-  };
-
-  function showNoteForCurrentPage() {
-    showNote(getNoteFromUrl(location.hash));
+  NoteController.prototype.htmlInsert = function () {
+    this.el = document.getElementById('app')
+    this.el.innerHTML = this.noteListView.displayNotes()
   }
 
-  function getNoteFromUrl(locationHash) {
-    return parseInt(location.hash.split("#notes/")[1]);
+  NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function () {
+    window.addEventListener('hashchange', showNoteForCurrentPage)
   }
 
-  function showNote(noteId) {
-    document.getElementById("singlenote").innerHTML = noteList.getNoteList()[noteId].getText();
+  function showNoteForCurrentPage () {
+    showNote(getNoteFromUrl(location.hash))
   }
 
-  exports.NoteController = NoteController;
-})(this);
+  function getNoteFromUrl (locationHash) {
+    return parseInt(location.hash.split("#notes/")[1])
+  }
+
+  function showNote (noteId) {
+    document.getElementById('singlenote').innerHTML = noteList.getNoteList()[noteId].getText();
+  }
+
+  exports.NoteController = NoteController
+})(this)

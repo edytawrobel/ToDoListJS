@@ -1,20 +1,19 @@
-"use strict";
+'use strict';
 
-(function(exports) {
-  function NoteList() {
-    this._notes = [];
+(function (exports) {
+  function NoteList () {
+    this._notes = []
   }
 
   NoteList.prototype.getNoteList = function () {
-    return this._notes;
-  };
+    return this._notes
+  }
 
   NoteList.prototype.addNote = function (text) {
-    var note = new Note(text);
-    note.id = this._notes.length;
-    return this._notes.push(note);
-  };
+    var note = new Note(text)
+    note.id = this._notes.length
+    return this._notes.push(note)
+  }
 
-exports.NoteList = NoteList;
-
-})(this);
+  exports.NoteList = NoteList
+})(this)
